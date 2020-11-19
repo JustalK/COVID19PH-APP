@@ -6,6 +6,8 @@
     "start": "webpack-dev-server --open --mode development --config config/config.js",
     "build": "webpack --progress --mode production --config config/config.js",
     "test": "react-scripts test",
+	"coverage": "react-scripts test --coverage --watchAll=false",
+	"coveralls": "coveralls < coverage/lcov.info",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -14,6 +16,9 @@
       "react-app/jest"
     ]
   },
+  "engines": {
+  	"node": ">=12.0"
+	},
   "browserslist": {
     "production": [
       ">0.2%",
@@ -40,6 +45,7 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "babel-loader": "^8.1.0",
+    "coveralls": "^3.1.0",
     "css-loader": "^5.0.1",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
