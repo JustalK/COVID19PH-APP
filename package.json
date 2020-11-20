@@ -6,8 +6,8 @@
     "start": "webpack-dev-server --open --mode development --config config/config.js",
     "build": "webpack --progress --mode production --config config/config.js",
     "test": "react-scripts test",
-	"coverage": "react-scripts test --coverage --watchAll=false",
-	"coveralls": "coveralls < coverage/lcov.info",
+    "coverage": "react-scripts test --coverage --watchAll=false",
+    "coveralls": "coveralls < coverage/lcov.info",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -17,8 +17,8 @@
     ]
   },
   "engines": {
-  	"node": ">=12.0"
-	},
+    "node": ">=12.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -35,6 +35,10 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.19.6",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
@@ -44,6 +48,7 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "8.1.0",
     "coveralls": "^3.1.0",
     "css-loader": "^5.0.1",
@@ -64,6 +69,8 @@
     "stylelint-scss": "^3.18.0",
     "stylelint-webpack-plugin": "^2.1.1",
     "svg-url-loader": "^6.0.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.0.5",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"

@@ -11,13 +11,13 @@ module.exports = (env, argv) => {
 	require('dotenv').config({ path: './env/.env.' + utils.mode(argv.mode) });
 
 	return {
-		entry: path.resolve(__dirname, './../src/index.js'),
+		entry: path.resolve(__dirname, './../src/index.tsx'),
 		output: {
 		  path: path.resolve(__dirname, './../build'),
 		  filename: 'index.js',
 		},
 		resolve: {
-			extensions: ['*', '.js', '.jsx'],
+			extensions: [ '.tsx', '.ts', '.js' ],
 		},
 		plugins: [
 			new FriendlyErrorsWebpackPlugin(),
@@ -50,6 +50,10 @@ module.exports = (env, argv) => {
 					test: /\.html$/,
 					loader: 'html-loader'
 				},
+				{
+		           test: /\.(ts|tsx)$/,
+		           loader: "awesome-typescript-loader",
+		         },
 				{
 					  test: /\.m?js$/,
 					  exclude: /node_modules/,
