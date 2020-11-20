@@ -11,10 +11,8 @@ export class Api extends Axios {
 
     public constructor (conf: AxiosRequestConfig) {
         super(conf);
+		console.log(this);
 
-        this.token="";
-        this.getToken = this.getToken.bind(this);
-        this.setToken = this.setToken.bind(this);
         this.getUri = this.getUri.bind(this);
         this.request = this.request.bind(this);
         this.get = this.get.bind(this);
@@ -23,27 +21,13 @@ export class Api extends Axios {
 
           this.interceptors.request.use((param) => {
             return {
-                ...param,
-                defaults: {
-                    headers: {
-                        ...param.headers,
-                        "Authorization": `Bearer ${this.getToken()}`
-                    },
-                }
+                ...param
             }
         });
 
         this.interceptors.response.use(param => ({
             ...param
         }));
-    }
-
-    public getToken (): string {
-        return `Bearer ${this.token}`;
-    }
-
-    public setToken (token: string): void {
-        this.token = token;
     }
 
     public getUri (config?: AxiosRequestConfig): string {

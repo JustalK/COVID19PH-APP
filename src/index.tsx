@@ -4,6 +4,10 @@ import './less/main.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { CaseApi } from './services/CaseApi';
+import { apiConfig } from './config/api.config';
+const api = new CaseApi(apiConfig);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

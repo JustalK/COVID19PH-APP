@@ -12,7 +12,6 @@ export class CaseApi extends Api {
 	public async getAllCases (): Promise<Case[]> {
 		try {
 			const res: AxiosResponse<Case[]> = await this.get<Case, AxiosResponse<Case[]>>("http://13.250.29.32:5000/cases");
-			console.log(res);
 			return this.success(res);
 		} catch (error) {
 			throw error;
