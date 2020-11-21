@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './less/main.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Case } from "./interfaces/Case";
 
 import { CaseApi } from './services/CaseApi';
 import { apiConfig } from './config/api.config';
-const api = new CaseApi(apiConfig);
+
+const lol = async () => {
+	const rofl: CaseApi = new CaseApi(apiConfig);
+	const cases = await rofl.getAllCases();
+	console.log(cases[0]);
+}
+lol();
 
 ReactDOM.render(
   <React.StrictMode>

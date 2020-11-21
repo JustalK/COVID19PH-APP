@@ -3,9 +3,8 @@ import { PathLike } from "fs";
 
 export const apiConfig = {
     returnRejectedPromiseOnError: true,
-    withCredentials: true,
     timeout: 30000,
-    baseURL: "https://jsonplaceholder.typicode.com/",
+    baseURL: "http://localhost:5000/",
     headers: {
         common: {
             "Cache-Control": "no-cache, no-store, must-revalidate",
