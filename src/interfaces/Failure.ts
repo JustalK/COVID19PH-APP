@@ -1,4 +1,4 @@
-export interface Failure<FailureType extends string> {
-	type: FailureType
-	reason: string
+export interface Failure {
+	type: string
+	message: string
 }

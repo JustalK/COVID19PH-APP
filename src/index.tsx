@@ -10,8 +10,8 @@ import { apiConfig } from './config/api.config';
 
 const lol = async () => {
 	const rofl: CaseApi = new CaseApi(apiConfig);
-	const cases = await rofl.getAllCases();
-	console.log(cases[0]);
+	const cases = await rofl.get_all_cases();
+	console.log(cases);
 }
 lol();
 

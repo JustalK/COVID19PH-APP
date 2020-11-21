@@ -3,9 +3,10 @@ import axios, {
     AxiosResponse,
 	AxiosInstance,
     AxiosError,
-} from "axios";
+} from 'axios';
+import { Failure } from '../interfaces/Failure'
 
-export class Api {
+export abstract class Api {
 	#instance: AxiosInstance;
 
     public constructor (config: AxiosRequestConfig) {
@@ -32,7 +33,7 @@ export class Api {
         return response.data;
     }
 
-    error<T> (error: AxiosError<T>): void {
-        throw error;
+    error(error: Failure): Failure {
+        return error;
     }
 }
