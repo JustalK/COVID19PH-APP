@@ -4,7 +4,7 @@ import axios, {
 	AxiosInstance,
     AxiosError,
 } from 'axios';
-import { Failure } from '../interfaces/Failure'
+import { Failure } from 'src/interfaces/Failure'
 
 export abstract class Api {
 	#instance: AxiosInstance;

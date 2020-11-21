@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './less/main.less';
+import logo from 'src/logo.svg';
+import 'src/less/main.less';
 
 function App() {
 	function handleClick(e: React.MouseEvent) {

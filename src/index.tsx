@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './less/main.less';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Case } from "./interfaces/Case";
+import 'src/less/main.less';
+import App from 'src/App';
+import reportWebVitals from 'src/reportWebVitals';
+import { Case } from "src/interfaces/Case";
 
-import { CaseApi } from './services/CaseApi';
-import { apiConfig } from './config/api.config';
+import { CaseApi } from 'src/services/CaseApi';
+import { apiConfig } from 'src/config/api.config';
 
 const lol = async () => {
 	const rofl: CaseApi = new CaseApi(apiConfig);
