@@ -2,33 +2,33 @@ import React from 'react';
 import logo from 'src/logo.svg';
 import 'src/less/main.less';
 
-function App() {
-	function handleClick(e: React.MouseEvent) {
-  		e.preventDefault();
-  		console.log('The link was clicked.');
+export default class App extends React.Component {
+	handleClick(e: React.MouseEvent): void {
+		e.preventDefault();
+		console.log('The link was clicked.');
+		return;
 	}
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-		<a href="#" onClick={handleClick}>
-  Click me
-</a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	render(): React.ReactNode {
+		return (
+			<div className="App">
+				<header className="App-header">
+					<img src={logo} className="App-logo" alt="logo" />
+					<p>
+						Edit <code>src/App.tsx</code> and save to reload.
+					</p>
+					<a href="#" onClick={this.handleClick}>
+						Click me
+					</a>
+					<a
+						className="App-link"
+						href="https://reactjs.org"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Learn React
+					</a>
+				</header>
+			</div>
+		);}
 }
-
-export default App;

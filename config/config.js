@@ -28,9 +28,10 @@ module.exports = (env, argv) => {
 				fix: true,
 				files: [
 					'src/*.js',
+					'src/*.tsx',
 					'src/*.html'
 				],
-				extensions: [ 'js', 'html' ]
+				extensions: [ 'js', 'tsx', 'html' ]
 			}),
 			new StyleLintPlugin({
 				fix: true,
