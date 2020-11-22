@@ -6,6 +6,15 @@ export interface Case {
 	sex: string
 }
 
+export interface TotalCases {
+	total_cases: number
+}
+
 export interface FailureCase extends Failure {
 	reason: string
+}
+
+export interface FailureTotalCases extends Failure {
+	reason: string,
+	total_cases: number
 }

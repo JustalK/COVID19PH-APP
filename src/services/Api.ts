@@ -33,7 +33,7 @@ export abstract class Api {
         return response.data;
     }
 
-    error(error: Failure): Failure {
+    error(error: Failure): any {
         return error;
     }
 }
