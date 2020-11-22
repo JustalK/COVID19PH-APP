@@ -1,0 +1,63 @@
+@import (reference) "libs/constants.less";
+@import (reference) "libs/mixins.less";
+
+#APP {
+	position: relative;
+	min-height: 100vh;
+	background: rgb(35, 138, 195);
+	background: linear-gradient(180deg, rgba(35, 138, 195, 1) 0%, rgba(35, 138, 195, 0.9472163865546218) 24%, rgba(146, 225, 226, 0.9556197478991597) 59%, rgba(9, 159, 132, 1) 100%);
+
+	& .container {
+		position: relative;
+		width: 90%;
+		height: 100vh;
+		margin: auto;
+
+		& a {
+			position: absolute;
+			bottom: 20%;
+			left: 0;
+			padding: 2rem;
+			background: @background-white;
+			color: @background-red;
+			border-radius: 1.2rem;
+			.font-size(1.4);
+		}
+
+		& .total_cases {
+			position: absolute;
+			bottom: 12%;
+			left: 0;
+			width: 100%;
+			.font-size(1.2);
+
+			& em {
+				color: @background-blue;
+				vertical-align: middle;
+				.font-size(2.4);
+			}
+		}
+
+		& .app_name {
+			position: absolute;
+			top: 20%;
+			left: 0;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: @background-white;
+			.font-size(2.6);
+
+			& em:nth-child(1) {
+				color: @background-blue;
+			}
+
+			& em:nth-child(2) {
+				color: @background-red;
+			}
+
+			& em:nth-child(3) {
+				display: block;
+			}
+		}
+	}
+}

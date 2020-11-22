@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from 'src/logo.svg';
-import 'src/less/main.less';
+import 'src/less/app.less';
 
 import { CaseApi } from 'src/services/CaseApi';
 import { apiConfig } from 'src/config/api.config';
@@ -32,24 +31,13 @@ export default class App extends React.Component<AppProps, AppStates> {
 
 	render(): React.ReactNode {
 		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-						Edit <code>src/App.tsx</code> and save to reload. {this.state.total_cases}
-					</p>
-					<a href="#" onClick={this.handleClick}>
-						Click me
-					</a>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-				</header>
+			<div id="APP">
+				<header></header>
+				<div className="container">
+					<span className="app_name"><em>covid</em>19<em>ph</em><em>app</em></span>
+					<a href="#" onClick={this.handleClick}>Explore the impact</a>
+					<span className="total_cases">There are actually <em>{this.state.total_cases}</em> cases in the Philippines.</span>
+				</div>
 			</div>
 		);}
 }

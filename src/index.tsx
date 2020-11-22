@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'src/less/main.less';
+import 'src/less/libs/main.less';
 import App from 'src/App';
 import reportWebVitals from 'src/reportWebVitals';
 
