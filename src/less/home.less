@@ -1,11 +1,22 @@
 @import (reference) "libs/constants.less";
 @import (reference) "libs/mixins.less";
 
-#APP {
+#HOME {
 	position: relative;
 	min-height: 100vh;
 	background: rgb(35, 138, 195);
 	background: linear-gradient(180deg, rgba(35, 138, 195, 1) 0%, rgba(35, 138, 195, 0.9472163865546218) 24%, rgba(146, 225, 226, 0.9556197478991597) 59%, rgba(9, 159, 132, 1) 100%);
+	overflow: hidden;
+
+	& picture {
+		position: absolute;
+		top: -25%;
+		right: -10%;
+
+		& img {
+			width: 100%;
+		}
+	}
 
 	& .container {
 		position: relative;
@@ -15,7 +26,7 @@
 
 		& a {
 			position: absolute;
-			bottom: 20%;
+			bottom: 12%;
 			left: 0;
 			padding: 2rem;
 			background: @background-white;
@@ -26,7 +37,7 @@
 
 		& .total_cases {
 			position: absolute;
-			bottom: 12%;
+			bottom: 5%;
 			left: 0;
 			width: 100%;
 			.font-size(1.2);

@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'src/less/libs/main.less';
-import App from 'src/App';
+import Home from 'src/Home';
 import reportWebVitals from 'src/reportWebVitals';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+	<Router>
+		<Switch>
+			<Route path="/">
+				<Home />
+			</Route>
+		</Switch>
+	</Router>,
 	document.getElementById('root')
 );
 
