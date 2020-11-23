@@ -2,16 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'src/less/libs/main.less';
 import Home from 'src/Home';
+import Stats from 'src/Stats';
 import reportWebVitals from 'src/reportWebVitals';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 ReactDOM.render(
 	<Router>
-		<Switch>
-			<Route path="/">
-				<Home />
-			</Route>
-		</Switch>
+		<TransitionGroup>
+			<CSSTransition<undefined>
+				addEndListener={(node: HTMLElement, done: () => void) => {
+					return;
+				}}>
+				<Switch>
+					<Route path="/stats">
+						<Stats />
+					</Route>
+					<Route path="/">
+						<Home />
+					</Route>
+				</Switch>
+			</CSSTransition>
+		</TransitionGroup>
 	</Router>,
 	document.getElementById('root')
 );

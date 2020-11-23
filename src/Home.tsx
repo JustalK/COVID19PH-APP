@@ -2,7 +2,7 @@ import React from 'react';
 import 'src/less/home.less';
 
 import philippines from 'src/../public/imgs/philippines.png';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Helper } from 'src/utils/Helper';
 
 import { CaseApi } from 'src/services/CaseApi';
@@ -44,9 +44,10 @@ export default class Home extends React.Component<HomeProps, HomeStates> {
 						<img src={philippines} alt="Flowers" />
 					</picture>
 					<span className="app_name"><em>covid</em>19<em>ph</em><em>app</em></span>
-					<Link to="/" onClick={this.handleClick}>Explore the impact</Link>
+					<Link to="/stats">Explore the impact</Link>
 					<span className="total_cases">There are actually <em>{this.state.total_cases}</em> cases in the Philippines.</span>
 				</div>
 			</div>
-		);}
+		);
+	}
 }
