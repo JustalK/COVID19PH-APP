@@ -36,7 +36,6 @@ export default class Home extends React.Component<HomeProps, HomeStates> {
 	render(): React.ReactNode {
 		return (
 			<div id="HOME">
-				<header></header>
 				<div className="container">
 					<picture>
 						<source media="(min-width:650px)" srcSet="img_pink_flowers.jpg" />

@@ -47,6 +47,7 @@ module.exports = (env, argv) => {
 		],
 		devServer: {
 			contentBase: path.resolve(__dirname, '../build'),
+			historyApiFallback: true
 		},
 		module: {
 			rules: [
@@ -64,9 +65,14 @@ module.exports = (env, argv) => {
 					  use: {
 						loader: 'babel-loader',
 						options: {
-						  presets: [
-							['@babel/preset-env', { targets: "defaults" }]
-						  ]
+							presets: [
+								['@babel/preset-env', { targets: "defaults" }]
+							],
+  				  			plugins: [
+								[
+		  							"@babel/plugin-proposal-class-properties"
+								]
+							],
 						}
 					  }
 					},

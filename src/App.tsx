@@ -12,7 +12,7 @@ class App extends React.Component<RouteComponentProps, any> {
 
 		return (
 			<TransitionGroup>
-				<CSSTransition<undefined> key={location.key} classNames="transition" timeout={10000}>
+				<CSSTransition<undefined> key={location.key} classNames="transition" timeout={1000}>
 					<Switch location={location}>
 						<Route path="/stats">
 							<Stats />
