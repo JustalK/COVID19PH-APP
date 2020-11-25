@@ -5,60 +5,35 @@ import { StatsProps, StatsStates } from 'src/interfaces/Stats';
 import Menu from 'src/Menu';
 
 import CanvasJSReact from 'src/assets/libs/canvasjs.react';
-const CanvasJS = CanvasJSReact.CanvasJS;
+import TypeCanvasJS from 'canvasjs';
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const dataPoints: any =[];
-export default class Stats extends React.Component<StatsProps, StatsStates> {
-	chart: any;
+import { canvasConfig } from 'src/config/canvas.config';
 
-	componentDidMount(){
-		const chart = this.chart;
-		fetch('https://canvasjs.com/data/gallery/react/nifty-stock-price.json')
-			.then(function(response) {
-				return response.json();
-			})
-			.then(function(data) {
-				for (let i = 0; i < data.length; i++) {
-					dataPoints.push({
-						x: new Date(data[i].x),
-						y: data[i].y
-					});
-				}
-				chart.render();
-			});
+export default class Stats extends React.Component<StatsProps, StatsStates> {
+	chart: TypeCanvasJS.Chart;
+
+	constructor(props: StatsProps) {
+		super(props);
+		this.state = {
+			points: [{x: new Date(), y: '0'}]
+		};
+	}
+
+	async componentDidMount(): Promise<void> {
+		const response = await fetch('https://canvasjs.com/data/gallery/react/nifty-stock-price.json');
+		const datas = await response.json();
+		const points = datas.map((d: {x: string, y: string}) => ({
+			x: new Date(d.x),
+			y: d.y
+		}));
+		this.setState({ points });
+		this.chart.render();
 	}
 
 	render(): React.ReactNode {
-		const options = {
-			height: 260,
-			theme: 'light2',
-			axisY: {
-				title: '',
-				tickLength: 0,
-				lineThickness: 0,
-				gridThickness: 0,
-				margin: 0,
-				labelFormatter: function(e: any) {
-					return '';
-				}
-			},
-			axisX: {
-				gridThickness: 100,
-				gridColor: '#11a389',
-				labelFontColor: 'black',
-				tickColor: 'white',
-				lineColor: 'white'
-
-			},
-			data: [{
-				lineColor: 'red',
-				color: 'blue',
-				type: 'line',
-				xValueFormatString: 'MMM YYYY',
-				dataPoints: dataPoints
-			}]
-		};
+		const options = canvasConfig;
+		Object.assign(options.data[0], {dataPoints: this.state.points});
 
 		return (
 			<div id="STATS">
@@ -66,7 +41,7 @@ export default class Stats extends React.Component<StatsProps, StatsStates> {
 				<div className="wrapper">
 					<span><em>500,000</em> cases in the Philippines</span>
 					<div className="graph">
-						<CanvasJSChart options={options}
+						<CanvasJSChart options={canvasConfig}
 							onRef={(ref: any) => this.chart = ref}
 						/>
 					</div>
