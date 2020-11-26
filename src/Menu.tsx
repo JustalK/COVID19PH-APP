@@ -11,11 +11,21 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 
 	render(): React.ReactNode {
 		return (
-			<nav id="MENU">
-				<Link to="/menu">☰</Link>
-				<span>{this.props.page}</span>
-				<Link to="/menu">?</Link>
-			</nav>
+			<div id="MENU">
+				<nav>
+					<Link to="/menu">☰</Link>
+					<span>{this.props.page}</span>
+					<Link to="/menu">?</Link>
+				</nav>
+				<div id="WRAPPER">
+					<ul>
+						<li><Link to="/menu">as da sd</Link></li>
+						<li><Link to="/menu">a sdasd</Link></li>
+						<li><Link to="/menu">asdsds asd</Link></li>
+						<li><Link to="/menu">asdasda dsasd</Link></li>
+					</ul>
+				</div>
+			</div>
 		)
 	}
 }

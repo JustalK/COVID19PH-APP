@@ -8,73 +8,69 @@
 	width: 100%;
 	overflow: hidden;
 
-	& .wrapper {
-		margin-top: 5rem;
+	span {
+		display: block;
+		line-height: 5rem;
+		text-align: center;
+		.font-size(1.4);
+	}
 
-		span {
-			display: block;
-			line-height: 5rem;
-			text-align: center;
-			.font-size(1.4);
-		}
+	& .graph {
+		overflow: hidden;
+	}
 
-		& .graph {
-			overflow: hidden;
-		}
+	& .headline {
+		background: @background-gray;
+	}
 
-		& .headline {
-			background: @background-gray;
-		}
+	& .canvasjs-chart-container {
+		transform: scale(1.05);
+	}
 
-		& .canvasjs-chart-container {
-			transform: scale(1.05);
-		}
+	& .canvasjs-chart-credit {
+		display: none;
+	}
 
-		& .canvasjs-chart-credit {
-			display: none;
-		}
+	& .details {
+		& li {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 5%;
 
-		& .details {
-			& li {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				margin: 5%;
-
-				& em {
-					padding: 1rem;
-					border-radius: 0.5rem;
-					color: white;
-					.font-size(1.4);
-				}
+			& em {
+				padding: 1rem;
+				border-radius: 0.5rem;
+				color: white;
+				.font-size(1.4);
 			}
 		}
+	}
 
-		& .resume {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			margin-bottom: 5%;
-			border-bottom: 1px solid @background-gray;
-			border-top: 1px solid @background-gray;
+	& .resume {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 5%;
+		border-bottom: 1px solid @background-gray;
+		border-top: 1px solid @background-gray;
 
-			& li {
-				text-align: center;
-				padding: 5%;
+		& li {
+			text-align: center;
+			padding: 5%;
 
-				&:nth-child(2) {
-					border-left: 1px solid @background-gray;
-					border-right: 1px solid @background-gray;
-				}
+			&:nth-child(2) {
+				border-left: 1px solid @background-gray;
+				border-right: 1px solid @background-gray;
+			}
 
-				& span {
-					line-height: initial;
-				}
+			& span {
+				line-height: initial;
+			}
 
-				& em {
-					display: block;
-					.font-size(2);
-				}
+			& em {
+				display: block;
+				.font-size(2);
 			}
 		}
 	}
