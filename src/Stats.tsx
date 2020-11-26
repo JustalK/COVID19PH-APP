@@ -38,7 +38,7 @@ export default class Stats extends React.Component<StatsProps, StatsStates> {
 
 		return (
 			<div id="STATS">
-				<Menu />
+				<Menu page="General" />
 				<div className="wrapper">
 					<span className="headline">COVID impact in the Philippines</span>
 					<div className="graph">

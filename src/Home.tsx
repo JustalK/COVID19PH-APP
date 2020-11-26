@@ -27,12 +27,6 @@ export default class Home extends React.Component<HomeProps, HomeStates> {
 		this.setState({ total_cases });
 	}
 
-	handleClick(e: React.MouseEvent): void {
-		e.preventDefault();
-		console.log('The link was clicked.');
-		return;
-	}
-
 	render(): React.ReactNode {
 		return (
 			<div id="HOME">
