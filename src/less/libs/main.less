@@ -1,3 +1,5 @@
+@import (reference) "constants.less";
+
 html {
 	font-size: 62.5%;
 }
@@ -37,6 +39,22 @@ body {
 
 em {
 	font-style: normal;
+
+	&.up.color-only {
+		color: @background-red;
+	}
+
+	&.down.color-only {
+		color: @background-blue;
+	}
+
+	&.up:not(.color-only) {
+		background: @background-red;
+	}
+
+	&.down:not(.color-only) {
+		background: @background-blue;
+	}
 }
 
 a {
@@ -45,4 +63,13 @@ a {
 
 #root {
 	position: relative;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
 }
