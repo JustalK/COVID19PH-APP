@@ -10,8 +10,19 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 		super(props);
 	}
 
-	render(): React.ReactNode {
+	render_menu(): React.ReactNode {
+		return (
+			<div id="WRAPPER">
+				<ul>
+					{Routes.get_all_routes().map((route_obj, index) => {
+						return <li key={index}><Link to={route_obj.path}>{route_obj.name}</Link></li>;
+					})}
+				</ul>
+			</div>
+		)
+	}
 
+	render(): React.ReactNode {
 		return (
 			<div id="MENU">
 				<nav>
@@ -19,13 +30,7 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 					<span>{this.props.page}</span>
 					<Link to="/menu">?</Link>
 				</nav>
-				<div id="WRAPPER">
-					<ul>
-						{Routes.get_all_routes().map((route_obj, index) => {
-							return <li key={index}><Link to={route_obj.path}>{route_obj.name}</Link></li>;
-						})}
-					</ul>
-				</div>
+				{this.props.page === 'Menu' && this.render_menu()}
 			</div>
 		);
 	}
