@@ -3,11 +3,13 @@ import 'src/less/libs/main.less';
 import Home from 'src/Home';
 import Stats from 'src/Stats';
 import Menu from 'src/Menu';
+import Routes from 'src/Routes';
 import { AppProps, AppStates } from 'src/interfaces/App';
 import { Switch, Route, withRouter, RouteComponentProps } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class App extends React.Component<RouteComponentProps, any> {
+
 	render(): React.ReactNode {
 		const { match, location, history } = this.props;
 
@@ -15,15 +17,9 @@ class App extends React.Component<RouteComponentProps, any> {
 			<TransitionGroup>
 				<CSSTransition<undefined> key={location.key} classNames="transition" timeout={1000}>
 					<Switch location={location}>
-						<Route path="/stats">
-							<Stats />
-						</Route>
-						<Route path="/menu">
-							<Menu page="Menu" />
-						</Route>
-						<Route path="/">
-							<Home />
-						</Route>
+						{Routes.get_all_routes().map((route_obj, index) => {
+							return <Route key={index} path={route_obj.path}>{route_obj.page}</Route>;
+						})}
 					</Switch>
 				</CSSTransition>
 			</TransitionGroup>

@@ -3,6 +3,7 @@ import 'src/less/libs/menu.less';
 
 import { MenuProps, MenuStates } from 'src/interfaces/Menu';
 import { Link } from 'react-router-dom';
+import Routes from 'src/Routes';
 
 export default class Menu extends React.Component<MenuProps, MenuStates> {
 	constructor(props: MenuProps) {
@@ -10,6 +11,7 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 	}
 
 	render(): React.ReactNode {
+
 		return (
 			<div id="MENU">
 				<nav>
@@ -19,13 +21,12 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 				</nav>
 				<div id="WRAPPER">
 					<ul>
-						<li><Link to="/menu">as da sd</Link></li>
-						<li><Link to="/menu">a sdasd</Link></li>
-						<li><Link to="/menu">asdsds asd</Link></li>
-						<li><Link to="/menu">asdasda dsasd</Link></li>
+						{Routes.get_all_routes().map((route_obj, index) => {
+							return <li key={index}><Link to={route_obj.path}>{route_obj.name}</Link></li>;
+						})}
 					</ul>
 				</div>
 			</div>
-		)
+		);
 	}
 }
