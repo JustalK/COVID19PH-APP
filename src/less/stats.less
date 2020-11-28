@@ -8,6 +8,11 @@
 	width: 100%;
 	overflow: hidden;
 
+	&.transition-exit-active {
+		transform: translateX(100%);
+		transition: transform 1s;
+	}
+
 	span {
 		display: block;
 		line-height: 5rem;

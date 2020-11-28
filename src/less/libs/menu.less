@@ -5,7 +5,16 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-	
+
+	&.transition-enter {
+		transform: translateX(-100%);
+	}
+
+	&.transition-enter-active {
+		transform: translateX(0%);
+		transition: transform 1s;
+	}
+
 	& nav {
 		position: fixed;
 	    width: 100%;
