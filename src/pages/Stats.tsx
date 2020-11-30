@@ -2,7 +2,7 @@ import React from 'react';
 import 'src/less/stats.less';
 
 import { StatsProps, StatsStates } from 'src/interfaces/Stats';
-import Menu from 'src/Menu';
+import Menu from 'src/pages/Menu';
 
 import CanvasJSReact from 'src/assets/libs/canvasjs.react';
 import TypeCanvasJS from 'canvasjs';

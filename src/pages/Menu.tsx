@@ -3,7 +3,9 @@ import 'src/less/libs/menu.less';
 
 import { MenuProps, MenuStates } from 'src/interfaces/Menu';
 import { Link } from 'react-router-dom';
-import Routes from 'src/Routes';
+import Routes from 'src/components/Routes';
+
+import { MenuRoutes } from 'src/interfaces/Routes';
 
 export default class Menu extends React.Component<MenuProps, MenuStates> {
 	constructor(props: MenuProps) {
@@ -11,8 +13,8 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 	}
 
 	render_menu(): React.ReactNode {
-		let routes = Routes.get_all_routes();
-		const indexMenu = routes.findIndex(r => r.path === '/menu');
+		let routes: MenuRoutes[] = Routes.get_all_routes();
+		const indexMenu: number = routes.findIndex((r: MenuRoutes) => r.path === '/menu');
 		routes.splice(indexMenu, 1);
 
 		return (
@@ -32,7 +34,7 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 				<nav>
 					<Link to="/menu">☰</Link>
 					<span>{this.props.page}</span>
-					<Link to="/menu">?</Link>
+					<Link to="/filter">?</Link>
 				</nav>
 				{this.props.page === 'Menu' && this.render_menu()}
 			</div>

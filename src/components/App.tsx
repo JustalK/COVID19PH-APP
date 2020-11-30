@@ -1,9 +1,9 @@
 import React from 'react';
 import 'src/less/libs/main.less';
-import Home from 'src/Home';
-import Stats from 'src/Stats';
-import Menu from 'src/Menu';
-import Routes from 'src/Routes';
+import Home from 'src/pages/Home';
+import Stats from 'src/pages/Stats';
+import Menu from 'src/pages/Menu';
+import Routes from 'src/components/Routes';
 import { AppProps, AppStates } from 'src/interfaces/App';
 import { Switch, Route, withRouter, RouteComponentProps } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
