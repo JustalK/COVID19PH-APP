@@ -1,0 +1,15 @@
+@import (reference) "libs/constants.less";
+@import (reference) "libs/mixins.less";
+
+#LISTING {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+
+	&.transition-exit-active {
+		transform: translateX(100%);
+		transition: transform 1s;
+	}
+}

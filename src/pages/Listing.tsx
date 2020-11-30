@@ -1,15 +1,15 @@
 import React from 'react';
-import 'src/less/listing.less';
+import 'src/less/filter.less';
 import Menu from 'src/pages/Menu';
 
-export default class Listing extends React.Component {
+export default class Filter extends React.Component {
 	render(): React.ReactNode {
 
 		return (
-			<div id="LISTING">
-				<Menu page="All Cases" />
+			<div id="FILTER">
+				<Menu page="Filter" />
 				<div id="WRAPPER">
-					Listing
+					Filter
 				</div>
 			</div>
 		);

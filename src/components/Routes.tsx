@@ -4,6 +4,7 @@ import Menu from 'src/pages/Menu';
 import Stats from 'src/pages/Stats';
 import Home from 'src/pages/Home';
 import Filter from 'src/pages/Filter';
+import Listing from 'src/pages/Listing';
 
 import { MenuRoutes } from 'src/interfaces/Routes';
 
@@ -24,6 +25,11 @@ export default class Routes extends React.Component {
 			path: '/filter',
 			name: 'Filter',
 			page: <Filter />
+		},
+		{
+			path: '/listing',
+			name: 'Listing',
+			page: <Listing />
 		},
 		{
 			path: '/',

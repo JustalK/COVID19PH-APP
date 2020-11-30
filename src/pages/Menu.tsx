@@ -16,6 +16,8 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 		let routes: MenuRoutes[] = Routes.get_all_routes();
 		const indexMenu: number = routes.findIndex((r: MenuRoutes) => r.path === '/menu');
 		routes.splice(indexMenu, 1);
+		const indexFilter: number = routes.findIndex((r: MenuRoutes) => r.path === '/filter');
+		routes.splice(indexFilter, 1);
 
 		return (
 			<div id="WRAPPER">
