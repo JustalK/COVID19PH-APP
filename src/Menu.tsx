@@ -11,10 +11,14 @@ export default class Menu extends React.Component<MenuProps, MenuStates> {
 	}
 
 	render_menu(): React.ReactNode {
+		let routes = Routes.get_all_routes();
+		const indexMenu = routes.findIndex(r => r.path === '/menu');
+		routes.splice(indexMenu, 1);
+
 		return (
 			<div id="WRAPPER">
 				<ul>
-					{Routes.get_all_routes().map((route_obj, index) => {
+					{routes.map((route_obj, index) => {
 						return <li key={index}><Link to={route_obj.path}>{route_obj.name}</Link></li>;
 					})}
 				</ul>
